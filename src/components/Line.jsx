@@ -2,7 +2,7 @@
 import styles from '../app/page.module.css'
 import { useRef, useEffect } from 'react';
 
-export default function Line() {
+export default function Line({ yShift, stringWidth }) {
 
   const path = useRef(null);
   let progress = 0;
@@ -17,7 +17,7 @@ export default function Line() {
 
   const setPath = (progress) => {
     const width = window.innerWidth * 0.7;
-    path.current.setAttributeNS(null, "d", `M0 ${250} Q${width * x} ${250 + progress}, ${width} ${250}`)
+    path.current.setAttributeNS(null, "d", `M41.9196 ${250 + 50} Q${(stringWidth ?? width) * x} ${250 + 50 + progress}, ${stringWidth ?? width} ${250 + 50}`)
 
   }
 
@@ -63,7 +63,7 @@ export default function Line() {
   }
 
   return (
-    <foreignObject className={styles.line}>
+    <foreignObject className={styles.line} y={yShift}>
         <div
             onMouseEnter={() => {manageMouseEnter()}}
             onMouseMove={(e) => {manageMouseMove(e)}}

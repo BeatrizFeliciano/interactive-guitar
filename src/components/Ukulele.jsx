@@ -29,10 +29,10 @@ export default function Ukulele({ width }) {
         <circle cx="278.468" cy="72.5" r="4.21875" stroke="white"/>
         <circle cx="307.455" cy="53.3864" r="4.21875" stroke="white"/>
         <circle cx="307.455" cy="72.5" r="4.21875" stroke="white"/>
-        {/* <line x1="41.9196" y1="51.0275" x2="263.847" y2="51.0275" stroke="white"/>
-        <line x1="41.9196" y1="59.5912" x2="263.847" y2="59.5913" stroke="white"/>
-        <line x1="41.9196" y1="68.155" x2="263.847" y2="68.155" stroke="white"/>
-        <line x1="41.9196" y1="76.7187" x2="263.847" y2="76.7187" stroke="white"/> */}
+        <Line yShift={51.0275} stringWidth={263.847} />
+        <Line yShift={59.5912} stringWidth={263.847} />
+        <Line yShift={68.155} stringWidth={263.847} />
+        <Line yShift={76.7187} stringWidth={263.847} />
     </svg>
 
   );
