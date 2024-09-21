@@ -17,7 +17,8 @@ export default function Line() {
 
   const setPath = (progress) => {
     const width = window.innerWidth * 0.7;
-    path.current.setAttributeNS(null, "d", `M0 250 Q${width * x} ${250 + progress}, ${width} 250`)
+    path.current.setAttributeNS(null, "d", `M0 ${250} Q${width * x} ${250 + progress}, ${width} ${250}`)
+
   }
 
   const lerp = (x, y, a) => x * (1 - a) + y * a
@@ -62,7 +63,7 @@ export default function Line() {
   }
 
   return (
-    <div className={styles.line}>
+    <foreignObject className={styles.line}>
         <div
             onMouseEnter={() => {manageMouseEnter()}}
             onMouseMove={(e) => {manageMouseMove(e)}}
@@ -72,6 +73,6 @@ export default function Line() {
         <svg>
             <path ref={path}></path>
         </svg>
-    </div>
+    </foreignObject>
   );
 }
