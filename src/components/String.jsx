@@ -2,7 +2,7 @@
 import styles from '../app/page.module.css'
 import { useRef, useEffect } from 'react';
 
-export default function Line({ yShift, stringWidth }) {
+export default function String({ yShift, stringWidth }) {
 
   const path = useRef(null);
   let progress = 0;
