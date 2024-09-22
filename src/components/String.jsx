@@ -17,7 +17,7 @@ export default function String({ yShift, stringWidth }) {
 
   const setPath = (progress) => {
     const width = window.innerWidth * 0.7;
-    path.current.setAttributeNS(null, "d", `M41.9196 ${250 + 50} Q${(stringWidth ?? width) * x} ${250 + 50 + progress}, ${stringWidth ?? width} ${250 + 50}`)
+    path.current.setAttributeNS(null, "d", `M41.9196 ${yShift} Q${(stringWidth ?? width) * x} ${yShift + progress}, ${stringWidth ?? width} ${yShift}`)
 
   }
 
@@ -63,16 +63,16 @@ export default function String({ yShift, stringWidth }) {
   }
 
   return (
-    <foreignObject className={styles.line} y={yShift}>
-        <div
-            onMouseEnter={() => {manageMouseEnter()}}
-            onMouseMove={(e) => {manageMouseMove(e)}}
-            onMouseLeave={() => {manageMouseLeave()}}
-            className={styles.box}
-        />
-        <svg>
-            <path ref={path}></path>
-        </svg>
-    </foreignObject>
+    <>
+      <foreignObject x={0} y={yShift} width="200" height="100" className={styles.line} y={yShift}>
+          <div
+              onMouseEnter={() => {manageMouseEnter()}}
+              onMouseMove={(e) => {manageMouseMove(e)}}
+              onMouseLeave={() => {manageMouseLeave()}}
+              className={styles.box}
+          />
+      </foreignObject>
+      <path ref={path} stroke='white' fill='transparent'></path>
+    </>
   );
 }
