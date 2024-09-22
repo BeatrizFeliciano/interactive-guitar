@@ -64,7 +64,7 @@ export default function String({ yShift, stringWidth }) {
 
   return (
     <>
-      <foreignObject x={0} y={yShift} width="200" height="100" className={styles.line} y={yShift}>
+      <foreignObject x={0} y={yShift} width="200" height="100" className={styles.line}>
           <div
               onMouseEnter={() => {manageMouseEnter()}}
               onMouseMove={(e) => {manageMouseMove(e)}}
